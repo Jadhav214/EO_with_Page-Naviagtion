@@ -1,0 +1,45 @@
+<html>
+    <head>
+        <title> Even Odd application by Kamal Sir </title>
+        <style>
+            * { font-size: 30px; }
+            body { background-color: blanchedalmond;}
+            .nav { background-color:aqua;}
+            .nav a {color: blue; text-decoration: none; padding:10%}
+        </style>
+        <script>
+            function check()
+            {
+                event.preventDefault();
+                let num = document.getElementById("num");
+                let ans = document.getElementById("ans");
+                if(num.value=="") 
+                {
+                    alert("Enter Number");
+                    ans.innerHTML="";
+                    num.focus();
+                    return;
+                }
+                let n = parseInt(num.value);
+                let r = n%2==0? "Even" : "Odd";
+                ans.innerHTML=num.value + " is " +r;
+            }
+        </script>
+    </head>
+    <body>
+        <center>
+            <div class="nav">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+            </div>
+            <h1> Even / Odd Finder </h1>
+            <form onsubmit="check()">
+                <input type="number" id="num" placeholder="Enter number"/>
+                <br></br>
+                <input type="submit" value="Find E/O"/>
+            </form>
+            <h1 id="ans"/>
+        </center>
+
+    </body>
+</html>
